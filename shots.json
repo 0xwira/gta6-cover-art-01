@@ -1,0 +1,5 @@
+[
+  { "name": "1-cover.jpg", "query": "?shot=cover&photos=pier,boulevard&layout=mosaic&title=NEON%20HORIZON&subtitle=THE%20CITY%20NEVER%20SLEEPS&size=landscape&grade=84&grain=22&vignette=48", "w": 1280, "h": 720 },
+  { "name": "2-editor.jpg", "query": "?shot=editor&photos=pier,boulevard&layout=triptych&title=MIDNIGHT%20RUN&subtitle=NO%20SLEEP%20ON%20THE%20COAST", "w": 1280, "h": 720 },
+  { "name": "3-portrait.jpg", "query": "?shot=cover&photos=boulevard,pier&layout=five&title=AFTER%20HOURS&subtitle=NEON%20IN%20OUR%20VEINS&size=portrait&grade=90&grain=34&vignette=68", "w": 810, "h": 1012 }
+]
