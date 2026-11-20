@@ -44,7 +44,7 @@ canvas.addEventListener('click',event=>{
   const rect=canvas.getBoundingClientRect(),unit=Math.min(canvas.width,canvas.height);
   const x=(event.clientX-rect.left)/rect.width*canvas.width/unit;
   const y=(event.clientY-rect.top)/rect.height*canvas.height/unit;
-  const wide=canvas.width>canvas.height*1.22,panelScale=wide?.82:1,panelOffsetX=wide?.07:0;
+  const wide=canvas.width>canvas.height*1.22,panelScale=wide?canvas.width/unit:1,panelOffsetX=0;
   const panels={triptych:[[.055,.095,.55,.43],[.625,.095,.32,.30],[.625,.415,.32,.30]],mosaic:[[.055,.095,.43,.40],[.505,.095,.44,.26],[.505,.385,.44,.34],[.055,.515,.43,.20]],five:[[.055,.095,.42,.38],[.495,.095,.45,.23],[.495,.355,.45,.25],[.055,.495,.29,.22],[.365,.625,.58,.09]]}[state.layout];
   const index=panels.findIndex(([px,py,pw,ph])=>x>=panelOffsetX+px*panelScale&&x<=panelOffsetX+(px+pw)*panelScale&&y>=py&&y<=py+ph);
   if(index<0)return;activePanel=index;refreshPhotoControls();setStatus(`Editing crop for panel ${String(activePanel+1).padStart(2,'0')}.`);

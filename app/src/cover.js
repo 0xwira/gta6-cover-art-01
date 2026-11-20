@@ -86,8 +86,8 @@ export function drawCover(canvas, state) {
   ctx.fillStyle=base;ctx.fillRect(0,0,w,h);
   const wide = w > h * 1.22;
   const layout = layouts[state.layout] || layouts.triptych;
-  const panelScale = wide ? .82 : 1;
-  const panelOffsetX = wide ? .07 : 0;
+  const panelScale = wide ? w / unit : 1;
+  const panelOffsetX = 0;
   for (let i=0;i<layout.length;i++) {
     const r=layout[i];
     const rect={x:panelOffsetX+r.x*panelScale,y:r.y,w:r.w*panelScale,h:r.h};
