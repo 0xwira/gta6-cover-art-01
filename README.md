@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/gta6-cover-art-01/0xwira/gta6-cover-art-01/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 [![reward](https://make.fun/badge/gta6-cover-art-01/0xwira/gta6-cover-art-01/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 
-Afterglow is an offline poster studio that turns your own photos into neon-lit, multi-panel city covers. Arrange triptych, mosaic, or five-frame layouts, tune each panel's crop, and finish the artwork with custom titles, sunset color, film grain, and vignette.
+Afterglow turns local photos into neon city posters with three collage layouts, independent crops for each frame, and editable lettering. Tune the sunset grade, film grain, and vignette, then download a square, portrait, or landscape PNG straight from the browser.
 
 ## Run it
 
