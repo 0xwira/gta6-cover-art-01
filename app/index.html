@@ -1,63 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#100e1b">
-<title>Afterglow — poster studio</title>
-<link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+  <title>Afterglow Studio</title>
 </head>
 <body>
-<main class="studio">
-  <header class="masthead">
-    <a class="brand" href="./" aria-label="Afterglow home"><span class="brand-mark">A</span><span>AFTERGLOW<small>POSTER STUDIO</small></span></a>
-    <div class="mast-note"><i></i> YOUR NIGHT. YOUR COVER.</div>
-  </header>
-  <div class="workspace">
-    <aside class="rail" aria-label="Poster controls">
-      <div class="intro"><p class="eyebrow">COVER ART / 01</p><h1>Make a scene.</h1><p>Build a neon-soaked city story from your own photographs.</p></div>
-      <section class="control-block">
-        <div class="section-heading"><span>01</span><h2>Your photographs</h2></div>
-        <label class="upload-button" for="photos"><span class="upload-plus">＋</span><span><b>Add photos</b><small>One or a whole camera roll</small></span><input id="photos" type="file" accept="image/*" multiple></label>
-        <div id="photo-list" class="photo-list" aria-live="polite"></div>
+  <header class="mast"><strong><i></i> AFTERGLOW</strong><span>POSTER STUDIO <b>01</b></span></header>
+  <main>
+    <aside aria-label="Cover settings">
+      <section><h2><span>01</span> Photos</h2>
+        <label class="upload">＋ Add photos<input id="photos" type="file" accept="image/*" multiple></label>
+        <div id="photo-list"></div>
       </section>
-      <section class="control-block">
-        <div class="section-heading"><span>02</span><h2>Panel arrangement</h2></div>
-        <div class="templates" role="group" aria-label="Collage template">
-          <button class="template active" data-layout="triptych" type="button"><span class="layout-icon triptych-icon"><i></i><i></i><i></i></span><span>TRIPTYCH</span></button>
-          <button class="template" data-layout="mosaic" type="button"><span class="layout-icon mosaic-icon"><i></i><i></i><i></i><i></i></span><span>MOSAIC</span></button>
-          <button class="template" data-layout="five" type="button"><span class="layout-icon five-icon"><i></i><i></i><i></i><i></i><i></i></span><span>FIVE FRAME</span></button>
+      <section><h2><span>02</span> Frames</h2>
+        <div class="choices" id="layouts" aria-label="Layout">
+          <button data-layout="triptych">Triptych</button><button data-layout="mosaic">Mosaic</button><button data-layout="five">Five frame</button>
         </div>
-        <label class="field-label" for="panel-photo">PHOTO IN <span id="panel-name">PANEL 01</span></label>
-        <select id="panel-photo" class="select"></select>
-        <div class="slider-row"><label for="crop-x">Horizontal crop</label><input id="crop-x" type="range" min="-1" max="1" step="0.01" value="0"><output for="crop-x">0</output></div>
-        <div class="slider-row"><label for="crop-y">Vertical crop</label><input id="crop-y" type="range" min="-1" max="1" step="0.01" value="0"><output for="crop-y">0</output></div>
-        <div class="slider-row"><label for="zoom">Panel zoom</label><input id="zoom" type="range" min="1" max="2.5" step="0.01" value="1"><output for="zoom">1.0×</output></div>
+        <div class="pair"><label>Frame<select id="panel"></select></label><label>Photo<select id="panel-photo"></select></label></div>
+        <label class="range">Position X<input id="crop-x" type="range" min="-1" max="1" step=".01"><output></output></label>
+        <label class="range">Position Y<input id="crop-y" type="range" min="-1" max="1" step=".01"><output></output></label>
+        <label class="range">Zoom<input id="zoom" type="range" min="1" max="3" step=".01"><output></output></label>
       </section>
-      <section class="control-block lettering-block">
-        <div class="section-heading"><span>03</span><h2>Poster lettering</h2></div>
-        <label class="field-label" for="title">MAIN TITLE</label><input id="title" class="text-field title-field" maxlength="30" value="MIDNIGHT RUN">
-        <label class="field-label" for="subtitle">THE SMALL PRINT</label><input id="subtitle" class="text-field" maxlength="50" value="THE CITY NEVER SLEEPS">
+      <section><h2><span>03</span> Lettering</h2>
+        <label class="field">Title<input id="title" maxlength="60"></label>
+        <label class="field">Caption<input id="subtitle" maxlength="80"></label>
       </section>
-      <section class="control-block finish-block">
-        <div class="section-heading"><span>04</span><h2>Color &amp; finish</h2></div>
-        <div class="slider-row"><label for="grade">Sunset grade</label><input id="grade" type="range" min="0" max="100" value="78"><output for="grade">78%</output></div>
-        <div class="slider-row"><label for="grain">Film grain</label><input id="grain" type="range" min="0" max="100" value="30"><output for="grain">30%</output></div>
-        <div class="slider-row"><label for="vignette">Vignette</label><input id="vignette" type="range" min="0" max="100" value="58"><output for="vignette">58%</output></div>
+      <section><h2><span>04</span> Finish</h2>
+        <label class="range">Sunset grade<input id="grade" type="range" min="0" max="100"><output></output></label>
+        <label class="range">Film grain<input id="grain" type="range" min="0" max="100"><output></output></label>
+        <label class="range">Vignette<input id="vignette" type="range" min="0" max="100"><output></output></label>
       </section>
     </aside>
-    <section class="preview-column" aria-label="Live poster preview">
-      <div class="preview-top"><div><p class="eyebrow">LIVE CANVAS</p><h2>Make it yours<span> ✳</span></h2></div><div class="save-mark"><span class="save-dot"></span> ALL CHANGES LOCAL</div></div>
-      <div class="canvas-wrap"><canvas id="cover" width="1080" height="1080" aria-label="Live cover art preview"></canvas><div class="canvas-corner corner-tl"></div><div class="canvas-corner corner-br"></div></div>
-      <div class="export-bar"><div class="size-picker" role="group" aria-label="Export size">
-        <button data-size="square" class="size-option active" type="button"><b>1:1</b><small>POST</small></button>
-        <button data-size="portrait" class="size-option" type="button"><b>4:5</b><small>PORTRAIT</small></button>
-        <button data-size="landscape" class="size-option" type="button"><b>16:9</b><small>LANDSCAPE</small></button>
-      </div><button id="export" class="export-button" type="button"><span>↓</span> EXPORT PNG <small>1080 × 1080</small></button></div>
-      <p id="status" class="status" role="status">A little afterglow goes a long way.</p>
-    </section>
-  </div>
-</main>
-<script type="module" src="./src/main.js"></script>
+    <article aria-label="Preview and export">
+      <div class="preview-label"><span>LIVE PREVIEW</span><span id="dimensions"></span></div>
+      <div class="stage"><canvas id="cover" aria-label="Current cover"></canvas></div>
+      <div class="toolbar">
+        <div class="choices" id="sizes" aria-label="Export format">
+          <button data-size="square" aria-label="Square">1:1</button><button data-size="portrait" aria-label="Portrait">4:5</button><button data-size="landscape" aria-label="Landscape">16:9</button>
+        </div>
+        <button id="export">↓ &nbsp; Export PNG</button>
+      </div>
+      <p id="status" role="status"></p>
+    </article>
+  </main>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
